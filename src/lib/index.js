@@ -1,1 +1,2 @@
-// place files you want to import through the `$lib` alias in this folder.
+export { default as SiteHeader } from './SiteHeader.svelte';
+export { default as SiteFooter } from './SiteFooter.svelte';
