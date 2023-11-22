@@ -83,7 +83,7 @@
 }
 
 .tagLine {
-  @apply text-white m-0 -mt-12 relative;
+  @apply text-white m-0 -mt-16 relative leading-none;
   font-family: "Mr Dafoe";
   font-size: 5.5em;
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
