@@ -28,8 +28,9 @@
 <div class="grid content-center min-h-screen w-full top-0">
   <div class="w-45 m-auto text-center">
     <h1 class={["name", showName && introVal ? "show" : ""].join(" ")}>
-      <span>Ted Waller</span>
-      <span>Ted Waller</span>
+      <span class="shadow">Ted Waller</span>
+      <span class="gradient">Ted Waller</span>
+      <span class="shine"></span>
     </h1>
     <h2 class={["tagLine", showTag && introVal ? "show" : ""].join(" ")}>Full Stack Developer</h2>
   </div>
@@ -51,29 +52,33 @@
     opacity: 1;
     left: 0;
   }
+}
 
-  &::after {
+.shine {
     content: "";
     position: absolute;
-    top: -0.1em;
-    right: 0.05em;
+    top: 0.15em;
+    right: 0.2rem;
     width: 0.4em;
     height: 0.4em;
     background:
-      radial-gradient(white 3%, rgba(white, 0.3) 15%, rgba(white, 0.05) 60%, transparent 80%),
-      radial-gradient(rgba(white, 0.2) 50%, transparent 60%) 50% 50% / 5% 100%,
-      radial-gradient(rgba(white, 0.2) 50%, transparent 60%) 50% 50% / 70% 5%;
+      radial-gradient(white 3%, #ffffff30 15%, #ffffff50 30%, transparent 50%),
+      radial-gradient(#ffffff30 50%, transparent 60%) 50% 50% / 5% 100%,
+      radial-gradient(#ffffff30 50%, transparent 60%) 50% 50% / 70% 5%;
     background-repeat: no-repeat;
-  }
-}
+    animation: slide 3s ease-in-out 0s 1 ;
 
-.name > span:first-child {
+  }
+
+  .shadow {
     display: block;
     text-shadow: 0 0 0.1em #8ba2d0, 0 0 0.2em black,  0 0 5em #165ff3;
     -webkit-text-stroke: 0.06em rgba(black, 0.5);
+
+    perspective: 1000px;
   }
 
-.name > span:last-child {
+.gradient {
   position: absolute;
   left: 0;
   top: 0;
@@ -179,6 +184,16 @@
 
   to {
     transform: rotate(-7deg) ;
+  }
+}
+
+@keyframes slide {
+  from {
+    right: 55px;
+  }
+
+  to {
+    right: .2rem;
   }
 }
 </style>

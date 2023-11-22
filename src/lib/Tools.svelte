@@ -68,6 +68,10 @@
   }
 </script>
 
+<h2 class="h2">
+  My tools
+</h2>
+
 <div class="container m-auto">
     <div class="tools-grid md:grid-cols-3 lg:grid-cols-5">
       {#each all as item}

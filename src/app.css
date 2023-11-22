@@ -7,8 +7,38 @@ html{
 }
 
 .h2 {
-  @apply text-white text-7xl relative mb-12;
-  text-shadow:  0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
+  @apply
+    text-white
+    text-7xl
+    uppercase
+    relative
+    bg-opacity-30
+    pl-24
+    -rotate-6
+    scale-105
+    mb-24
+    text-white;
+  font-family: "Exo";
+  mask: linear-gradient(
+      to top,
+      #000 1%, 0%,
+      #0000 8%, 0%,
+      #000 10%, 0%,
+      #0000 16%, 0%,
+      #000 19%, 0%,
+      #0000 24%, 0%,
+      #000 28%, 0%,
+      #0000 32%, 0%,
+      #000 37%, 0%,
+      #0000 40%, 0%,
+      #000 46%, 0%,
+      #0000 48%, 0%,
+      #000 55%, 0%,
+      #0000 56%, 0%,
+      #000 57%     /* visible til end */
+    ) no-repeat;
+
+  /* text-shadow:  0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
   font-family: "Mr Dafoe";
 
   &::before {
@@ -22,5 +52,5 @@ html{
     box-shadow: 0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
     background: white;
     z-index: -1;
-  }
+  } */
 }

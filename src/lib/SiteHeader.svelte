@@ -3,12 +3,19 @@
   let showHeader = false;
 
   intro.subscribe((value) => showHeader = !value);
+
+  function toTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
 </script>
 
 <header id="header" class={["site-header", showHeader ? "show" : ""].join(" ")}>
   <div class="container m-auto flex justify-between">
-    <h1 class={["name", showHeader ? "show" : ""].join(" ")}>
-      Ted Waller
+    <h1 class={showHeader ? "show" : ""}>
+      <button class="name" on:click={toTop}>
+        <span class="shadow">Ted Waller</span>
+        <span class="gradient">Ted Waller</span>
+      </button>
     </h1>
 
     <div class="flex items-center">
@@ -28,20 +35,25 @@
   .site-header {
     @apply
       fixed
+      bg-black
+      bg-opacity-10
       py-4
       w-full
       transition-all
       -top-72
-      bg-gradient-to-r
-      from-cyan-600
-      to-fuchsia-600
-      bg-opacity-60
       z-10;
-
-      box-shadow: 0 0 0.3em #fff, 0 0 0.4em #fe05e1, 0 0 1.8em #f958e6;
+      /* box-shadow: 0 0 0.3em #fff, 0 0 0.4em #fe05e1, 0 0 1.8em #f958e6; */
     &.show {
       top: 0;
       opacity: 100;
+    }
+  }
+
+  .site-header:hover {
+    @apply bg-opacity-80;
+    & .name {
+      opacity: 1;
+      animation-play-state: running;
     }
   }
   .name {
@@ -53,34 +65,20 @@
       font-bold
       left-0
       text-white
+      opacity-40
       transition-all;
 
-    mask: linear-gradient(
-      to top,
-      #000 1%, 0%,
-      #0000 8%, 0%,
-      #000 10%, 0%,
-      #0000 16%, 0%,
-      #000 19%, 0%,
-      #0000 24%, 0%,
-      #000 28%, 0%,
-      #0000 32%, 0%,
-      #000 37%, 0%,
-      #0000 40%, 0%,
-      #000 46%, 0%,
-      #0000 48%, 0%,
-      #000 55%, 0%,
-      #0000 56%, 0%,
-      #000 57%     /* visible til end */
-    ) no-repeat;
-
     font-family: "Exo";
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
     transform: skew(-15deg);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    color: transparent;
+    animation: float 3s ease-in-out 0s infinite alternate;
+    animation-play-state: paused;
 
-    &.show {
-      @apply
-        left-0;
+    &:hover {
+      opacity: 1;
     }
 
     &::after {
@@ -91,12 +89,26 @@
       width: 0.4em;
       height: 0.4em;
       background:
-        radial-gradient(255, 255, 255 3%, rgba(255, 255, 255, 0.3) 15%, rgba(255, 255, 255, 0.05) 60%, transparent 80%),
-        radial-gradient(rgba(255, 255, 255, 0.2) 50%, transparent 60%) 50% 50% / 5% 100%,
-        radial-gradient(rgba(255, 255, 255, 0.2) 50%, transparent 60%) 50% 50% / 70% 5%;
+        radial-gradient(white 3%, #ffffff30 15%, #ffffff50 30%, transparent 50%),
+        radial-gradient(#ffffff30 50%, transparent 60%) 50% 50% / 5% 100%,
+        radial-gradient(#ffffff30 50%, transparent 60%) 50% 50% / 70% 5%;
       background-repeat: no-repeat;
     }
   }
+
+  .shadow {
+    display: block;
+    text-shadow: 0 0 0.1em #8ba2d0, 0 0 0.2em black,  0 0 5em #165ff3;
+    -webkit-text-stroke: 0.1em rgba(black, 0.5);
+  }
+  .gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(#032d50 25%, #00a1ef 40%, white 50%, #20125f 50%, #8313e7 55%, #ff61af 75%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.02em #94a0b9;
+}
 
   .nav-link {
     @apply
@@ -138,5 +150,15 @@
     @apply
     transition-all
     opacity-100;
+  }
+
+  @keyframes float {
+    from {
+      transform: translateY(5px) skew(-15deg);
+    }
+
+    to {
+      transform: translateY(-5px) skew(-15deg);
+    }
   }
 </style>
