@@ -1,7 +1,7 @@
 <div class="mission-statement">
   <p class="container text">
-    I'm a <span class="highlight">Full Stack Developer</span> specializing in <span class="highlight">component architecture</span> and
-    <span class="highlight">design systems</span>.
+    I'm a <span class="highlight">Full Stack Developer</span> specializing in <br /><span class="highlight">web apps</span> and
+    <span class="highlight">component architecture</span>.
   </p>
   <p class="container text">Making stuff for the web since <span class="highlight">'05.</span></p>
 </div>

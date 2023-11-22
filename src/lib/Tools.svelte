@@ -1,24 +1,48 @@
 <script>
   const all = [
     {
-      name: "HTML 5",
-      image: "html5"
+      name: "VueJS",
+      image: "vue"
     },
     {
-      name: "CSS 3",
-      image: "css3"
+      name: "Svelte",
+      image: "svelte"
     },
     {
-      name: "Ruby",
-      image: "ruby"
+      name: "React",
+      image: "react"
+    },
+    {
+      name: "NodeJS",
+      image: "node"
+    },
+    {
+      name: "MongoDB",
+      image: "mongo"
+    },
+    {
+      name: "PostgreSQL",
+      image: "postgresql"
     },
     {
       name: "JavaScript",
       image: "js"
     },
     {
-      name: "NodeJS",
-      image: "node"
+      name: "Ruby",
+      image: "ruby"
+    },
+    {
+      name: "Godot",
+      image: "godot"
+    },
+    {
+      name: "HTML 5",
+      image: "html5"
+    },
+    {
+      name: "CSS 3",
+      image: "css3"
     },
     {
       name: "Figma",
@@ -33,28 +57,8 @@
       image: "vscode"
     },
     {
-      name: "MongoDB",
-      image: "mongo"
-    },
-    {
-      name: "PostgreSQL",
-      image: "postgresql"
-    },
-    {
       name: "Tailwind",
       image: "tailwind"
-    },
-    {
-      name: "VueJS",
-      image: "vue"
-    },
-    {
-      name: "Svelte",
-      image: "svelte"
-    },
-    {
-      name: "React",
-      image: "react"
     },
    ];
 
@@ -65,10 +69,7 @@
 </script>
 
 <div class="container m-auto">
-  <h2 class="h2">What I Use</h2>
-
-  <div class="container m-auto">
-    <div class="text-center">
+    <div class="tools-grid md:grid-cols-3 lg:grid-cols-5">
       {#each all as item}
         <button class="tool" style={`--animation-delay: ${genDelay()};`}>
           <span class="tooltip">{item.name}</span>
@@ -76,12 +77,22 @@
         </button>
       {/each}
     </div>
-  </div>
 </div>
 
 <style>
+  .tools-grid {
+    @apply
+      grid
+      place-content-center
+      place-items-center;
+    display: grid;
+
+  }
+
   .tool {
-    @apply relative;
+    @apply relative p-8 grid place-items-center;
+    animation: floating 8s ease-in-out infinite;
+    animation-delay: calc(var(--animation-delay) * 400ms);
 
     &:hover::after {
       @apply absolute;
@@ -90,7 +101,7 @@
       height: 100%;
       content: "";
       transform: scale(1.4);
-      background: radial-gradient(circle, rgba(254,100,225, .7) 0%, rgba(254,5,225,0) 60%);
+      background: radial-gradient(circle, rgba(254,100,225, .5) 0%, rgba(254,5,225,0) 50%);
       top: 0;
       z-index: -1;
     }
@@ -99,7 +110,7 @@
   .tool:hover .tooltip {
       @apply
         opacity-100
-        -top-12;
+        top-1/2;
     }
 
   .tooltip {
@@ -109,27 +120,25 @@
       bg-opacity-70
       left-1/2
       -translate-x-1/2
+      -translate-y-1/2
       opacity-0
       p-3
       rounded-full
       text-xl
-      -top-16
+      top-1/3
       transition-all
-      pointer-events-none;
+      pointer-events-none
+      z-20;
     font-family: "Exo";
-    width: 100%;
-
   }
 
   .tool-logo {
     @apply
       transition-all
       relative;
-    max-width: 150px;
-    max-height: 100px;
-    margin-right: -15px;
-    margin-left: -15px;
-    animation: floating 10s ease-in-out infinite;
+
+    max-height: 150px;
+    animation: rotate 6s linear infinite;
     animation-delay: calc(var(--animation-delay) * 400ms);
 
     &:hover {
@@ -139,9 +148,17 @@
     }
   }
 
+  @keyframes rotate {
+    0% { transform: skew(0, 0); }
+    25%   { transform: skew(0deg, 2.5deg); }
+    75%  { transform: skew(0deg, -2.5deg); }
+    0% { transform: skew(0, 0); }
+  }
+
   @keyframes floating {
     0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
+    25%  { transform: translate(0, 14px); }
+    75%  { transform: translate(0, -14px); }
     100%   { transform: translate(0, -0px); }
   }
 </style>

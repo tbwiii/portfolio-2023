@@ -45,6 +45,7 @@
   letter-spacing: 0.03em;
   left: -100%;
   transition: all .2s linear;
+  animation: blipName 3.7s linear 2s 1;
 
   &.show {
     opacity: 1;
@@ -92,10 +93,92 @@
   opacity: 0;
   right: -100%;
   transition: all .2s linear;
+  animation: blipTag 3.7s linear 5s 1;
 
   &.show {
     opacity: 1;
     right: 0;
+  }
+}
+
+@keyframes blipName {
+  from {
+    transform: skew(-15deg) scaleY(1) skew(0, 0);
+  }
+  49.5% {
+    transform: skew(-15deg) scaleY(1) skew(0, 0);
+  }
+  50% {
+    transform: skew(-15deg)  scaleY(0.01) skew(253deg, 32deg);
+  }
+  50% {
+    transform: skew(-15deg)  scaleY(1) skew(0, 0);
+  }
+
+
+  59% {
+    transform: skew(-15deg) scaleY(1) skew(0, 0);
+  }
+  60% {
+    transform: skew(-15deg)  scaleY(0.1) skew(253deg, 32deg);
+  }
+  61% {
+    transform: skew(-15deg) scaleY(1) skew(0, 0);
+  }
+
+  to {
+    transform: skew(-15deg) scaleY(1) skew(0, 0);
+  }
+}
+@keyframes blipTag {
+  from {
+
+  }
+
+  19.5% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+  20% {
+    transform: rotate(-7deg)  scaleY(0.01) skew(253deg, 32deg);
+  }
+  20% {
+    transform: rotate(-7deg)  scaleY(1) skew(0, 0);
+  }
+
+
+  29% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+  30% {
+    transform: rotate(-7deg)  scaleY(0.1) skew(253deg, 32deg);
+  }
+  31% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+
+  90.5% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+  91% {
+    transform: rotate(-7deg)  scaleY(0.01) skew(253deg, 32deg);
+  }
+  92% {
+    transform: rotate(-7deg)  scaleY(1) skew(0, 0);
+  }
+
+
+  97% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+  98% {
+    transform: rotate(-7deg)  scaleY(0.1) skew(253deg, 32deg);
+  }
+  99% {
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
+  }
+
+  to {
+    transform: rotate(-7deg) ;
   }
 }
 </style>

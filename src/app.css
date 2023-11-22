@@ -8,7 +8,7 @@ html{
 
 .h2 {
   @apply text-white text-7xl relative mb-12;
-  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  text-shadow:  0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
   font-family: "Mr Dafoe";
 
   &::before {
