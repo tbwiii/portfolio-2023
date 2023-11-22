@@ -8,6 +8,6 @@
 
 <style>
   .footer {
-    @apply absolute bottom-0 bg-black bg-opacity-10 w-full;
+    @apply bg-black bg-opacity-10 w-full;
   }
 </style>

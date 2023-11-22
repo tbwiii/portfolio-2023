@@ -4,9 +4,7 @@
 
 <style>
   .floor-wrapper {
-    position: absolute;
-    background: rgb(20, 12, 30);
-    position: absolute;
+    position: fixed;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -16,6 +14,7 @@
     perspective-origin: 50% 50%;
     perspective: 180px;
     top: 0;
+    z-index: -1;
   }
   .floor {
     overflow: hidden;
@@ -28,9 +27,9 @@
       linear-gradient(to bottom, #6eccee 2px, transparent 2px),
       linear-gradient(to left, #6eccee 2px, transparent 2px);
     background-size: 20px 20px, 50px 50px;
-    background-position: -1px -1px, -1px -1px;
+    background-position: 0px, 0px, -1px -1px;
     transform: rotateX(75deg);
-    animation: moveUp 5s infinite linear;
+    animation: slide 12s 1 ease-in-out;
 
     &::before {
       content: "";
@@ -41,12 +40,20 @@
     }
   }
 
-  @keyframes moveUp {
+  @keyframes slide {
   0% {
     background-position: 0px 0px, -1px -1px;
+    transform: rotateX(30deg);
   }
+
+  20% {
+    transform: rotateX(75deg);
+    background-position: 0px 0px, -1px -1px;
+  }
+
   100% {
-    background-position: -20px -20px, -1px -1px;
+    background-position: 50 50, -1px -1px;
+    transform: rotateX(75deg);
   }
 }
 </style>
