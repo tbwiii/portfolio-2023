@@ -43,13 +43,13 @@
 
   .box {
     @apply
-      bg-black
+      bg-fuchsia-800
       bg-opacity-40
       rounded
       p-12
       grid
       gap-8;
-    box-shadow: 0 0 0.3em #fff, 0 0 1em #fe05e1;
+    box-shadow: 0 0 0.3em #fff, 0 0 1em #fe05e1, inset 0 0 40em #fe05e1;
   }
 
   .title {
@@ -69,7 +69,7 @@
       mb-2
       text-2xl
       uppercase
-      text-cyan-300;
+      text-white;
     font-family: "Exo";
   }
 

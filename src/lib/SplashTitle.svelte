@@ -137,7 +137,7 @@
 }
 @keyframes blipTag {
   from {
-
+    transform: rotate(-7deg) scaleY(1) skew(0, 0);
   }
 
   19.5% {
