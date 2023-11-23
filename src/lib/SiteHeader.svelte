@@ -11,13 +11,16 @@
 
 <header id="header" class={["site-header", showHeader ? "show" : ""].join(" ")}>
   <div class="container m-auto flex justify-between">
-    <h1 class={showHeader ? "show" : ""}>
-      <button class="name" on:click={toTop}>
-        <span class="shadow">Ted Waller</span>
-        <span class="gradient">Ted Waller</span>
-      </button>
-    </h1>
+    <div class="grid grid-cols-2 gap-12 items-center">
+      <h1 class={showHeader ? "show" : ""}>
+        <button class="name" on:click={toTop}>
+          <span class="shadow">Ted Waller</span>
+          <span class="gradient">Ted Waller</span>
+        </button>
+      </h1>
 
+      <h2 class={["tag-line", showHeader ? "show" : ""].join(" ")}>Full Stack Developer</h2>
+    </div>
     <div class="flex items-center">
       <a class="nav-link" href="https://github.com/tbwiii/">
         <img class="nav-logo" src="/github.png" alt="GitHub Logo">
@@ -36,7 +39,7 @@
     @apply
       fixed
       bg-black
-      bg-opacity-10
+      bg-opacity-80
       py-4
       w-full
       transition-all
@@ -50,9 +53,7 @@
   }
 
   .site-header:hover {
-    @apply bg-opacity-80;
     & .name {
-      opacity: 1;
       animation-play-state: running;
     }
   }
@@ -64,9 +65,7 @@
       text-5xl
       font-bold
       left-0
-      text-white
-      opacity-40
-      transition-all;
+      text-white;
 
     font-family: "Exo";
     letter-spacing: 0.08em;
@@ -76,10 +75,8 @@
     color: transparent;
     animation: float 3s ease-in-out 0s infinite alternate;
     animation-play-state: paused;
-
-    &:hover {
-      opacity: 1;
-    }
+    left: -12rem;
+    transition: all .4s ease-out .2s;
 
     &::after {
       content: "";
@@ -96,19 +93,43 @@
     }
   }
 
+  .show .name {
+      left: 0;
+    }
+
   .shadow {
     display: block;
     text-shadow: 0 0 0.1em #8ba2d0, 0 0 0.2em black,  0 0 5em #165ff3;
     -webkit-text-stroke: 0.1em rgba(black, 0.5);
   }
   .gradient {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-image: linear-gradient(#032d50 25%, #00a1ef 40%, white 50%, #20125f 50%, #8313e7 55%, #ff61af 75%);
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.02em #94a0b9;
-}
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(#032d50 25%, #00a1ef 40%, white 50%, #20125f 50%, #8313e7 55%, #ff61af 75%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02em #94a0b9;
+  }
+
+  .tag-line {
+    @apply
+      text-white
+      m-0
+      relative
+      leading-none
+      pt-2
+      text-3xl;
+    font-family: "Mr Dafoe";
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    opacity: 0;
+    top: -4rem;
+    transition: all .4s ease-out .3s;
+
+    &.show {
+      opacity: 1;
+      top: 0;
+    }
+  }
 
   .nav-link {
     @apply

@@ -8,16 +8,17 @@ html{
 
 .h2 {
   @apply
-    text-white
-    text-7xl
+  text-white
+    text-9xl
     uppercase
     relative
     bg-opacity-30
     pl-24
     -rotate-6
     scale-105
-    mb-24
-    text-white;
+    my-28
+  text-white
+    max-w-full;
   font-family: "Exo";
   mask: linear-gradient(
       to top,
@@ -38,19 +39,12 @@ html{
       #000 57%     /* visible til end */
     ) no-repeat;
 
-  /* text-shadow:  0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
-  font-family: "Mr Dafoe";
-
-  &::before {
-    @apply absolute rounded-full;
-    border-radius: 0 100% 0  100%;
-    bottom: 7px;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    box-shadow: 0 0 0.05em #005986, 0 0 0.1em #00a1ef, 0 0 0.2em #00a1ef;
-    background: white;
-    z-index: -1;
-  } */
+ &.alt {
+  @apply
+    text-right
+    rotate-6
+    pl-0
+    pr-24
+    mb-40;
+ }
 }

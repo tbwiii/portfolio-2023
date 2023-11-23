@@ -32,7 +32,7 @@
       <span class="gradient">Ted Waller</span>
       <span class="shine"></span>
     </h1>
-    <h2 class={["tagLine", showTag && introVal ? "show" : ""].join(" ")}>Full Stack Developer</h2>
+    <h2 class={["tag-line", showTag && introVal ? "show" : ""].join(" ")}>Full Stack Developer</h2>
   </div>
 </div>
 
@@ -88,7 +88,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.tagLine {
+.tag-line {
   @apply text-white m-0 -mt-16 relative leading-none;
   font-family: "Mr Dafoe";
   font-size: 5.5em;

@@ -17,5 +17,6 @@
   @import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
   .layout-wrapper {
     min-height: 100vh;
+    overflow-x: hidden;
   }
 </style>

@@ -12,7 +12,7 @@
       grid
       gap-12
       place-content-center
-      mb-44
+      mb-64
       m-auto
       text-center;
   }

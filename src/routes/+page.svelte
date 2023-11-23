@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import { Splash, Tools, MissionStatement } from "$lib";
+  import { Splash, Tools, MissionStatement, Projects } from "$lib";
   import { intro } from '$lib/stores/index';
 
   let introVal = "";
@@ -21,3 +21,4 @@
 <Splash />
 <MissionStatement />
 <Tools />
+<Projects />

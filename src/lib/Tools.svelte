@@ -69,15 +69,15 @@
 </script>
 
 <h2 class="h2">
-  My tools
+  Tools
 </h2>
 
-<div class="container m-auto">
+<div class="container m-auto mb-36">
     <div class="tools-grid md:grid-cols-3 lg:grid-cols-5">
       {#each all as item}
         <button class="tool" style={`--animation-delay: ${genDelay()};`}>
           <span class="tooltip">{item.name}</span>
-          <img class="tool-logo" src={`/tools/${item.image}.png`} alt={item.name}>
+          <img class="tool-logo" src={`/tools/${item.image}.png`}  style={`--animation-delay: ${genDelay()};`} alt={item.name}>
         </button>
       {/each}
     </div>
@@ -95,7 +95,7 @@
 
   .tool {
     @apply relative p-8 grid place-items-center;
-    animation: floating 8s ease-in-out infinite;
+    animation: floating 6s ease-in-out infinite alternate;
     animation-delay: calc(var(--animation-delay) * 400ms);
 
     &:hover::after {
@@ -142,7 +142,7 @@
       relative;
 
     max-height: 150px;
-    animation: rotate 6s linear infinite;
+    animation: rotate 7s ease-in-out infinite alternate;
     animation-delay: calc(var(--animation-delay) * 400ms);
 
     &:hover {
@@ -153,16 +153,15 @@
   }
 
   @keyframes rotate {
-    0% { transform: skew(0, 0); }
-    25%   { transform: skew(0deg, 2.5deg); }
-    75%  { transform: skew(0deg, -2.5deg); }
-    0% { transform: skew(0, 0); }
+    from { transform: rotateY(0deg) scale(1); }
+    25% { transform: rotateY(10deg) scale(.95); }
+    75% { transform: rotateY(0deg) scale(1); }
+    to  { transform: rotateY(-10deg) scale(.95); }
   }
 
   @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    25%  { transform: translate(0, 14px); }
-    75%  { transform: translate(0, -14px); }
-    100%   { transform: translate(0, -0px); }
+    from  { transform: translateY(0); }
+    25%  { transform: translateY(10px); }
+    to { transform: translateY(-10px); }
   }
 </style>
