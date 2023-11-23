@@ -35,7 +35,7 @@
         image: "/tools/godot.png",
       },
       tech: ["Godot", "GDScript", "Aseprite"],
-      desc: `Do It Now! Was a 1-week game jam project. The theme, "Gameshow", was revelaed when the timer started. Warning: The browser version takes a a mintute or two to load.`,
+      desc: `<i>Do It Now!</i> was a 1-week game jam project. The theme, "Gameshow", was revelaed when the timer started. Warning: The browser version takes a a mintute or two to load.`,
       role: "Concept, design, programming, and art",
     }
   ]

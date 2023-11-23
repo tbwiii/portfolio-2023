@@ -7,7 +7,7 @@
     <div class="lg:mx-12 lg:col-span-2 xl:col-span-1">
       <h3 class="title">{title}</h3>
       <div class="box">
-        <p class="">{desc}</p>
+        <p class="">{@html desc}</p>
 
         <div>
           <h4 class="role-title">Role</h4>
