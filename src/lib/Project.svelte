@@ -45,6 +45,8 @@
     @apply
       bg-fuchsia-800
       bg-opacity-40
+      border-2
+      border-fuchsia-200
       rounded
       p-12
       grid
