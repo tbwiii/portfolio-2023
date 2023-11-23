@@ -73,7 +73,7 @@
 </h2>
 
 <div class="container m-auto mb-36">
-    <div class="tools-grid md:grid-cols-3 lg:grid-cols-5">
+    <div class="tools-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
       {#each all as item}
         <button class="tool" style={`--animation-delay: ${genDelay()};`}>
           <span class="tooltip">{item.name}</span>

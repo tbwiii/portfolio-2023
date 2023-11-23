@@ -22,7 +22,7 @@
         name: "VueJS",
         image: "/tools/vue.png",
       },
-      tech: ["VueJS", "Nuxt", "PostgreSQL", "Vercel", "AWS", "Heroku", "Strapi"],
+      tech: ["VueJS", "Nuxt", "PostgreSQL", "Vercel", "AWS", "Heroku"],
       desc: "OinkChing is all about financial literacy. Courses are available for purchase and the Simulator is a free sponsored tool to help teach young adults how to think about money.",
       role: "Everything. Design, planning, front end, back end, deploys, monitoring, database management, etc.",
     },

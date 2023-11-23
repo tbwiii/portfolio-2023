@@ -14,9 +14,9 @@
           <p>{role}</p>
         </div>
 
-        <div class="flex">
+        <div class="flex flex-wrap">
           {#each tech as item}
-            <span class="tech">{item}</span>
+            <span class="tech mb-4 sm:mb-0">{item}</span>
           {/each}
         </div>
         <a class="button" href={url}>Check out {title}</a>
@@ -122,9 +122,14 @@
   .tool {
     position: absolute;
     right: 50%;
-    transform: translateX(64%);
     top: -40px;
+    transform: translateX(64%);
     width: 100px;
     height: auto;
+    display: none;
+
+    @media (min-width: 1280px) {
+      display: block;
+    }
   }
 </style>

@@ -26,7 +26,7 @@
 </script>
 
 <div class="grid content-center min-h-screen w-full top-0">
-  <div class="w-45 m-auto text-center">
+  <div class="max-w-45 m-auto text-center">
     <h1 class={["name", showName && introVal ? "show" : ""].join(" ")}>
       <span class="shadow">Ted Waller</span>
       <span class="gradient">Ted Waller</span>
@@ -41,7 +41,7 @@
   @apply relative uppercase m-0 -mt-10 opacity-0;
   font-family: "Exo";
   z-index: 1000;
-  font-size: 9em;
+  font-size: 3em;
   transform: skew(-15deg);
   letter-spacing: 0.03em;
   left: -100%;
@@ -51,6 +51,24 @@
   &.show {
     opacity: 1;
     left: 0;
+  }
+}
+
+@media (min-width: 510px) {
+  .name {
+    font-size: 4.7rem;
+  }
+}
+
+@media (min-width: 723px) {
+  .name {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .name {
+    font-size: 9rem;
   }
 }
 
@@ -91,18 +109,32 @@
 .tag-line {
   @apply text-white m-0 -mt-16 relative leading-none;
   font-family: "Mr Dafoe";
-  font-size: 5.5em;
+  font-size: 2em;
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
   transform: rotate(-7deg);
   z-index: 1000;
   opacity: 0;
   right: -100%;
+  top: 1.6em;
   transition: all .2s linear;
   animation: blipTag 3.7s linear 5s 1;
 
   &.show {
     opacity: 1;
     right: 0;
+  }
+}
+
+@media (min-width: 500px) {
+  .tag-line {
+    font-size: 3rem;
+    top: 1.8rem;
+  }
+}
+
+@media (min-width: 723px) {
+  .tag-line {
+    font-size: 5.5rem;
   }
 }
 

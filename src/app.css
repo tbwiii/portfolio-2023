@@ -9,7 +9,7 @@ html{
 .h2 {
   @apply
   text-white
-    text-9xl
+    text-6xl
     uppercase
     relative
     bg-opacity-30
@@ -38,6 +38,10 @@ html{
       #0000 56%, 0%,
       #000 57%     /* visible til end */
     ) no-repeat;
+
+    @media (min-width: 950px) {
+      @apply text-9xl;
+    }
 
  &.alt {
   @apply

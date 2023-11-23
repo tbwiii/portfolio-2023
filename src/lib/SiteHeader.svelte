@@ -46,7 +46,12 @@
       -top-72
       z-10;
       /* box-shadow: 0 0 0.3em #fff, 0 0 0.4em #fe05e1, 0 0 1.8em #f958e6; */
-    &.show {
+    display: none;
+    @media (min-width: 1060px) {
+      display: block;
+    }
+
+      &.show {
       top: 0;
       opacity: 100;
     }
