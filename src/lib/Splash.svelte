@@ -18,9 +18,9 @@
   }
 </script>
 
-<div class={["splash", hideSplash ? "hide" : "" ].join(" ")}>
+<div class={["splash overflow-hidden h-screen", hideSplash ? "hide" : "" ].join(" ")}>
   <SplashTitle />
-  <div class={["triangles", hideSplash ? "shrink" : "" ].join(" ")}>
+  <div class={["transition-all absolute top-1/2 left-1/2", hideSplash ? "scale-0 opacity-0" : "opacity-100 scale-100" ].join(" ")}>
     <Triangle />
     <TriangleAlt />
   </div>
@@ -28,20 +28,6 @@
 
 <style>
   .splash {
-    @apply overflow-hidden h-screen;
     transition: all 1s ease;
-
-    &.hide {
-      /* @apply -mb-44; */
-    }
   }
-
-  .triangles {
-    @apply transition-all absolute top-1/2 left-1/2 scale-100 opacity-100;
-
-    &.shrink {
-      @apply scale-0 opacity-0;
-    }
-  }
-
 </style>

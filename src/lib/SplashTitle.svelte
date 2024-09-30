@@ -27,18 +27,17 @@
 
 <div class="grid content-center min-h-screen w-full top-0">
   <div class="max-w-45 m-auto text-center">
-    <h1 class={["name", showName && introVal ? "show" : ""].join(" ")}>
+    <h1 class={["name relative uppercase m-0 -mt-10 opacity-0", showName && introVal ? "show" : ""].join(" ")}>
       <span class="shadow">Ted Waller</span>
       <span class="gradient">Ted Waller</span>
       <span class="shine"></span>
     </h1>
-    <h2 class={["tag-line", showTag && introVal ? "show" : ""].join(" ")}>Full Stack Developer</h2>
+    <h2 class={["tag-line text-white m-0 -mt-16 relative leading-none", showTag && introVal ? "show" : ""].join(" ")}>Full Stack Developer</h2>
   </div>
 </div>
 
 <style>
 .name {
-  @apply relative uppercase m-0 -mt-10 opacity-0;
   font-family: "Exo";
   z-index: 1000;
   font-size: 3em;
@@ -107,7 +106,6 @@
 }
 
 .tag-line {
-  @apply text-white m-0 -mt-16 relative leading-none;
   font-family: "Mr Dafoe";
   font-size: 2em;
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;

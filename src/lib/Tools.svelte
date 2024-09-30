@@ -62,6 +62,10 @@
     },
    ];
 
+   const tooltipClasses = `
+    
+   `
+
 
   function genDelay() {
     return Math.floor(Math.random() * 10);
@@ -73,33 +77,48 @@
 </h2>
 
 <div class="container m-auto mb-36">
-    <div class="tools-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+    <div
+      class="grid
+        place-content-center
+        place-items-center
+        grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-5"
+    >
       {#each all as item}
-        <button class="tool" style={`--animation-delay: ${genDelay()};`}>
-          <span class="tooltip">{item.name}</span>
-          <img class="tool-logo" src={`/tools/${item.image}.png`}  style={`--animation-delay: ${genDelay()};`} alt={item.name}>
+        <button class="tool relative p-8 grid place-items-center cursor-default" style={`--animation-delay: ${genDelay()};`}>
+          <span class="
+            tooltip
+            absolute
+          bg-black
+            bg-opacity-70
+            left-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+            opacity-0
+            p-3
+            rounded-full
+            text-xl
+            top-1/3
+            transition-all
+            pointer-events-none
+            z-20"
+            >
+              {item.name}
+            </span>
+          <img class="tool-logo transition-all relative" src={`/tools/${item.image}.png`}  style={`--animation-delay: ${genDelay()};`} alt={item.name}>
         </button>
       {/each}
     </div>
 </div>
 
 <style>
-  .tools-grid {
-    @apply
-      grid
-      place-content-center
-      place-items-center;
-    display: grid;
-
-  }
-
   .tool {
-    @apply relative p-8 grid place-items-center;
     animation: floating 6s ease-in-out infinite alternate;
     animation-delay: calc(var(--animation-delay) * 400ms);
 
     &:hover::after {
-      @apply absolute;
+      position: absolute;
       display: block;
       width: 100%;
       height: 100%;
@@ -112,35 +131,15 @@
   }
 
   .tool:hover .tooltip {
-      @apply
-        opacity-100
-        top-1/2;
+      opacity: 100;
+      top: 50%;
     }
 
   .tooltip {
-    @apply
-      absolute
-      bg-black
-      bg-opacity-70
-      left-1/2
-      -translate-x-1/2
-      -translate-y-1/2
-      opacity-0
-      p-3
-      rounded-full
-      text-xl
-      top-1/3
-      transition-all
-      pointer-events-none
-      z-20;
     font-family: "Exo";
   }
 
   .tool-logo {
-    @apply
-      transition-all
-      relative;
-
     max-height: 150px;
     animation: rotate 7s ease-in-out infinite alternate;
     animation-delay: calc(var(--animation-delay) * 400ms);

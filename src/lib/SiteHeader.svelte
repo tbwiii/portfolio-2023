@@ -9,26 +9,80 @@
   }
 </script>
 
-<header id="header" class={["site-header", showHeader ? "show" : ""].join(" ")}>
+<header id="header" class={[`
+  site-header
+  fixed
+  bg-black
+  bg-opacity-80
+  py-4
+  w-full
+  transition-all
+  -top-72
+  z-10`, showHeader ? "show" : ""].join(" ")}
+>
   <div class="container m-auto flex justify-between">
     <div class="grid grid-cols-2 gap-12 items-center">
       <h1 class={showHeader ? "show" : ""}>
-        <button class="name" on:click={toTop}>
+        <button class="
+          name
+          relative
+          uppercase
+          italic
+          text-5xl
+          font-bold
+          left-0
+          text-white"
+          on:click={toTop}
+        >
           <span class="shadow">Ted Waller</span>
           <span class="gradient">Ted Waller</span>
         </button>
       </h1>
 
-      <h2 class={["tag-line", showHeader ? "show" : ""].join(" ")}>Full Stack Developer</h2>
+      <h2 class={[`
+        tag-line
+        text-white
+        m-0
+        relative
+        leading-none
+        pt-2
+        text-3xl`, showHeader ? "show" : ""].join(" ")}
+      >
+        Full Stack Developer
+      </h2>
     </div>
-    <div class="flex items-center">
-      <a class="nav-link" href="https://github.com/tbwiii/">
-        <img class="nav-logo" src="/github.png" alt="GitHub Logo">
-        <span class="nav-text">GitHub</span>
+    <div class="flex items-center gap-2">
+      <a class="
+        nav-link
+        flex
+        items-center
+        ml-4
+        border
+        border-transparent
+        rounded
+        p-1
+        transition-all
+        hover:border-white"
+        href="https://github.com/tbwiii/"
+      >
+        <img class="w-8 h-8" src="/github.png" alt="GitHub Logo">
+        <span class="nav-text block pointer-events-none text-center opacity-0 grow">GitHub</span>
       </a>
-      <a class="nav-link" href="https://www.linkedin.com/in/tbwiii/">
-        <img class="nav-logo" src="/linkedin.png" alt="LinkedIn Logo">
-        <span class="nav-text">LinkedIn</span>
+      <a class="
+        nav-link
+        flex
+        items-center
+        ml-4
+        border
+        border-transparent
+        rounded
+        p-1
+        transition-all
+        hover:border-white"
+        href="https://www.linkedin.com/in/tbwiii/"
+      >
+        <img class="w-8 h-8" src="/linkedin.png" alt="LinkedIn Logo">
+        <span class="nav-text block pointer-events-none text-center opacity-0 grow">LinkedIn</span>
       </a>
     </div>
   </div>
@@ -36,15 +90,6 @@
 
 <style>
   .site-header {
-    @apply
-      fixed
-      bg-black
-      bg-opacity-80
-      py-4
-      w-full
-      transition-all
-      -top-72
-      z-10;
       /* box-shadow: 0 0 0.3em #fff, 0 0 0.4em #fe05e1, 0 0 1.8em #f958e6; */
     display: none;
     @media (min-width: 1060px) {
@@ -52,8 +97,8 @@
     }
 
       &.show {
-      top: 0;
-      opacity: 100;
+        top: 0;
+        opacity: 100;
     }
   }
 
@@ -63,15 +108,6 @@
     }
   }
   .name {
-    @apply
-      relative
-      uppercase
-      italic
-      text-5xl
-      font-bold
-      left-0
-      text-white;
-
     font-family: "Exo";
     letter-spacing: 0.08em;
     transform: skew(-15deg);
@@ -117,13 +153,6 @@
   }
 
   .tag-line {
-    @apply
-      text-white
-      m-0
-      relative
-      leading-none
-      pt-2
-      text-3xl;
     font-family: "Mr Dafoe";
     text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
     opacity: 0;
@@ -137,45 +166,17 @@
   }
 
   .nav-link {
-    @apply
-      flex
-      items-center
-      block
-      ml-4
-      border
-      border-transparent
-      rounded
-      p-1
-      transition-all;
     width: 42px;
     height: 42px;
 
     &:hover {
-      @apply
-        border-white;
       width: 120px;
     }
   }
 
-  .nav-logo {
-    @apply
-      w-8
-      h-8;
-  }
-
-  .nav-text {
-    @apply
-      block
-      text-center
-      opacity-0
-      grow;
-      pointer-events: none;
-  }
-
   .nav-link:hover .nav-text {
-    @apply
-    transition-all
-    opacity-100;
+    transition: all ease .3s;
+    opacity: 1;
   }
 
   @keyframes float {
